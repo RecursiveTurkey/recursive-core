@@ -18,6 +18,17 @@ Signal must move. Or it dies.
 Handles zero-frame reset logic. Strips structure to test if signal survives reduction.
 Engine: `/engine/collapse.py`
 
+### Role Handoff [P-002]
+
+A role may not carry multiple threads, nor may one thread be held by multiple roles.
+
+Engine: `/engine/role_handoff.py`
+
+This protocol ensures clean transitions between mesh nodes.  
+Thread ownership is explicit. Drift is introduced when a role overreaches or retains control beyond function.
+
+This is not delegation. This is surgical transfer.
+
 ### Signal Compression Test [P-003]
 Confirms that stripped signals retain intent. Compression is the proof of coherence.
 Engine: `/engine/signal_test.py`
